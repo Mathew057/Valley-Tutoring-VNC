@@ -1,0 +1,21 @@
+// This file overrides the built-in C++ (simple) runner
+// For more information see http://docs.c9.io:8080/#!/api/run-method-run
+{
+  "script": [
+    "set -e",
+    "if [ \"$debug\" == true ]; then ",
+    "/usr/bin/g++ -ggdb3 -std=c++11 -lSDL2 $file -o $file.o",
+    "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args",
+    "/opt/c9vnc/c9vnc.sh $file.o",
+    "else",
+    "/usr/bin/g++ -std=c++11 $file -lSDL2 -o $file.o",
+    "chmod 755 $file.o",
+    "/opt/c9vnc/c9vnc.sh $file.o 2>&1",
+    "fi"
+  ],
+  "info": "Running $file at \\033[01;34m$url/vnc.html?autoconnect=true\\033[00m.\n\\033[01;31m",
+  "debugger": "gdb",
+  "$debugDefaultState": false,
+  "env": {},
+  "selector": "^.*\\.(cpp|cc)$"
+}
