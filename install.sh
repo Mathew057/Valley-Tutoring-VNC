@@ -29,6 +29,7 @@ cp sdlremote.run ${HOME}/workspace/.c9/runners/sdlremote.run
 
 #Copy the fluxbox config
 mkdir ${HOME}/.fluxbox
+chmod 777 ${HOME}/.fluxbox
 cp fluxbox.conf ${HOME}/.fluxbox/startup
 
 #Copy the run script to proper /opt/ directory
