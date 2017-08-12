@@ -1,12 +1,3 @@
-# @Author: Mathew Black
-# @Date:   2017-08-12T01:54:07-05:00
-# @Email:  dev@mathewblack.com
-# @Last modified by:   Mathew Black
-# @Last modified time: 2017-08-12T02:07:29-05:00
-# @License: MIT
-
-
-
 #!/bin/bash
 
 #Request sudo permissions
