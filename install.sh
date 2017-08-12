@@ -28,6 +28,7 @@ cp c9vnc.run ${HOME}/workspace/.c9/runners/c9vnc.run
 cp sdlremote.run ${HOME}/workspace/.c9/runners/sdlremote.run
 
 #Copy the fluxbox config
+mkdir ${HOME}/.fluxbox
 cp fluxbox.conf ${HOME}/.fluxbox/startup
 
 #Copy the run script to proper /opt/ directory
