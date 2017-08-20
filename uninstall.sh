@@ -12,6 +12,7 @@ rm ${HOME}/.config/supervisord.conf
 
 #Remove C9 runner
 rm ${HOME}/workspace/.c9/runners/c9vnc.run
+rm ${HOME}/workspace/.c9/runners/sdlremote.run
 
 #Remove noVNC
 sudo rm -rf /opt/noVNC/
