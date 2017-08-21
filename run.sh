@@ -13,7 +13,7 @@ cp ${HOME}/.config/supervisord.conf ${HOME}/.config/supervisord.conf.bak
 echo "Running command $command on VNC"
 
 #Modify supervisord.conf
-sed -i -e "s|command=somecommand|command=$command|g" ${HOME}/.config/supervisord.conf
+sed -i -e "s|somecommand|$command|g" ${HOME}/.config/supervisord.conf
 
 #Run supervisord as forground in a child process that way it will actual run until we stop it
 supervisord -c ${HOME}/.config/supervisord.conf > ${HOME}/.config/supervisord.log &
