@@ -18,6 +18,10 @@ sed -i -e "s|command=somecommand|command=$command|g" ${HOME}/.config/supervisord
 #Run supervisord as forground in a child process that way it will actual run until we stop it
 supervisord -c ${HOME}/.config/supervisord.conf > ${HOME}/.config/supervisord.log &
 
+#allow supervisord to read the file before we remove the file
+sleep 1
+
+
 echo "Restoring defualts"
 mv ${HOME}/.config/supervisord.conf.bak ${HOME}/.config/supervisord.conf
 
