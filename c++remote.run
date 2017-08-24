@@ -4,12 +4,13 @@
   "script": [
     "set -e",
     "export file",
+    "echo \"linking with $args\"",
     "if [ \"$debug\" == true ]; then ",
-    "/usr/bin/g++ -ggdb3 -std=c++11 $file $links -o $file.o",
-    "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args",
+    "/usr/bin/g++ -ggdb3 -std=c++11 $file $args -o $file.o",
+    "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $debugargs",
     "/opt/c9vnc/c9vnc.sh",
     "else",
-    "/usr/bin/g++ -std=c++11 $file $links -o $file.o",
+    "/usr/bin/g++ -std=c++11 $file $args -o $file.o",
     "chmod 755 $file.o",
     "/opt/c9vnc/c9vnc.sh",
     "fi"

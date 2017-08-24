@@ -25,7 +25,9 @@ mkdir ${HOME}/workspace/.c9/runners
 
 #Copy the C9 runner to the C9 watch folder
 cp c9vnc.run ${HOME}/workspace/.c9/runners/c9vnc.run
-cp sdlremote.run ${HOME}/workspace/.c9/runners/sdlremote.run
+cp c++remote.run ${HOME}/workspace/.c9/runners/c++remote.run
+cp python2remote.run ${HOME}/workspace/.c9/runners/python2remote.run
+cp python3remote.run ${HOME}/workspace/.c9/runners/python3remote.run
 
 #Copy the run script to proper /opt/ directory
 sudo cp run.sh /opt/c9vnc/c9vnc.sh
