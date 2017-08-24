@@ -5,11 +5,11 @@
     "set -e",
     "export file",
     "if [ \"$debug\" == true ]; then ",
-    "/usr/bin/g++ -ggdb3 -std=c++11 -lSDL2 $file -o $file.o",
+    "/usr/bin/g++ -ggdb3 -std=c++11 $file $links -o $file.o",
     "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args",
     "/opt/c9vnc/c9vnc.sh",
     "else",
-    "/usr/bin/g++ -std=c++11 $file -lSDL2 -o $file.o",
+    "/usr/bin/g++ -std=c++11 $file $links -o $file.o",
     "chmod 755 $file.o",
     "/opt/c9vnc/c9vnc.sh",
     "fi"
