@@ -3,17 +3,17 @@
 {
   "script": [
     "set -e",
-    "export file",
-    "echo \"linking with $args\"",
+    "echo \"linking with $links\"",
     "if [ \"$debug\" == true ]; then ",
-    "/usr/bin/g++ -ggdb3 -std=c++11 $file $args -o $file.o",
-    "node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $debugargs",
-    "/opt/c9vnc/c9vnc.sh",
+    "/usr/bin/g++ -ggdb3 -std=c++11 $file $links -o $file.o",
+    "command=\"node $HOME/.c9/bin/c9gdbshim.js \"$file.o\" $args\"",
     "else",
-    "/usr/bin/g++ -std=c++11 $file $args -o $file.o",
+    "/usr/bin/g++ -std=c++11 $file $links -o $file.o",
     "chmod 755 $file.o",
-    "/opt/c9vnc/c9vnc.sh",
-    "fi"
+    "command=\"$file.o $args\"",
+    "fi",
+    "export command",
+    "/opt/c9vnc/c9vnc.sh"
   ],
   "info": "Running $file at \\033[01;34m$url/vnc.html?autoconnect=true\\033[00m.\n\\033[01;31m",
   "debugger": "gdb",
